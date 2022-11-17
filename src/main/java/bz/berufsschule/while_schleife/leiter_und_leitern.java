@@ -12,8 +12,9 @@ public class leiter_und_leitern {
         int spieler2 = 0;
         String spieler1Balken = " ";
         String spieler2Balken = " ";
+        boolean wiederholen = true;
 
-        for (int i = 0; i < 10; i++) {
+        while (wiederholen) {
             Random random = new Random();
             Random random2 = new Random();
             int rnd = random.nextInt(6) + 1;
@@ -105,15 +106,18 @@ public class leiter_und_leitern {
             } catch (InterruptedException ex) {
                 Logger.getLogger(wuerfelspiel3.class.getName()).log(Level.SEVERE, null, ex);
             }
+            if (spieler1 >= 100|| spieler2 >= 100){
+                wiederholen = false;
+            }
 
         }
         System.out.println(" ");
 
 
         if (spieler1 < spieler2) {
-            System.out.println("Spieler2 hat mit " + spieler2 + " Punkten das Spiel gewonnen!");
+            System.out.println("Spieler2 das Spiel gewonnen!");
         } else if (spieler1 > spieler2) {
-            System.out.println("Spieler1 hat mit " + spieler1 + " Punkten das Spiel gewonnen!");
+            System.out.println("Spieler1 das Spiel gewonnen!");
         } else {
             System.out.println("Die Spieler haben gleiche Punkte. Unendschieden!");
         }
