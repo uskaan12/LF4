@@ -15,5 +15,6 @@ public class beispiel1 {
             System.out.println(i);
             i++;
         }
+        System.out.println("Nach der Schleife hat i den Wert " + i);
     }
 }
