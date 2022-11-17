@@ -10,17 +10,27 @@ oder ob es beendet werden soll. möchte er ds Programm wiederholen, so startet e
 */
 public class beispiel4 {
     public static void main(String[] args) {
-        String eingabe = JOptionPane.showInputDialog("Gib eine Dezimalzahl ein:");
-        int zahl = Integer.parseInt(eingabe);
+        boolean wiederholen = true;
+        while (wiederholen){
+            String eingabe = JOptionPane.showInputDialog("Gib eine Dezimalzahl ein:");
+            int zahl = Integer.parseInt(eingabe);
 
-        String ergebnis = "";
+            String ergebnis = "";
 
-        while (zahl > 0) {
-            int rest = zahl % 2;
-            ergebnis = rest + ergebnis;
-            //zahl /=2 alternative schreibweise für zahl = zahl / 2;
-            zahl = zahl / 2;
+            while (zahl > 0) {
+                int rest = zahl % 2;
+                ergebnis = rest + ergebnis;
+                //zahl /=2 alternative schreibweise für zahl = zahl / 2;
+                zahl = zahl / 2;
+            }
+            System.out.println(eingabe + " entspricht der Binärzahl " + ergebnis);
+
+            String eingabe1 = JOptionPane.showInputDialog("Möchten sie sie das Programm wiederholen: j/n");
+            if (eingabe1.equalsIgnoreCase("n")){
+                wiederholen = false;
+            }
+
         }
-        System.out.println(eingabe + " entspricht der Binärzahl " + ergebnis);
+
     }
 }
