@@ -57,6 +57,39 @@ public class SclangenUndLeiter {
                 spieler1 = 6;
                 spieler1Balken = spieler1Balken.substring(0, spieler1);
             }
+            if (spieler2 == 19) {
+                spieler2 = 66;
+                for (int j = 0; j < 47; j++) {
+                    spieler2Balken += "-";
+                }
+            } else if (spieler2 == 67) {
+                spieler2 = 100;
+                for (int j = 0; j < 33; j++) {
+                    spieler2Balken += "-";
+                }
+            } else if (spieler2 == 32) {
+                spieler2 = 53;
+                for (int j = 0; j < 21; j++) {
+                    spieler2Balken += "-";
+                }
+            } else if (spieler2 == 73) {
+                spieler2 = 91;
+                for (int j = 0; j < 18; j++) {
+                    spieler2Balken += "-";
+                }
+            } else if (spieler2 == 88) {
+                spieler2 = 71;
+                spieler2Balken = spieler2Balken.substring(0, spieler2);
+            } else if (spieler1 == 74) {
+                spieler2 = 52;
+                spieler2Balken = spieler1Balken.substring(0, spieler2);
+            } else if (spieler2 == 46) {
+                spieler2 = 12;
+                spieler2Balken = spieler2Balken.substring(0, spieler2);
+            } else if (spieler1 == 25) {
+                spieler2 = 6;
+                spieler2Balken = spieler1Balken.substring(0, spieler2);
+            }
             System.out.print("Spieler1 hat:" + spieler1 + "Punkte. ||");
             System.out.print("Spieler2 hat:" + spieler2 + "Punkte. ||");
             System.out.println(" ");
