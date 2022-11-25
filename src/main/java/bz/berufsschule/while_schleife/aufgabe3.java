@@ -11,6 +11,10 @@ public class aufgabe3 {
                 }
             }
             System.out.println("");
+            /*
+            Bei println wird der Text ausgegeben und eine neue Zeile gemacht.
+            Bei print wird alles in dieselbe Zeile geschrieben.
+             */
         }
     }
 }
