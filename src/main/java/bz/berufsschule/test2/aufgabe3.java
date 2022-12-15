@@ -7,11 +7,10 @@ public class aufgabe3 {
         Random zufall = new Random();
         int zz = zufall.nextInt(7) + 3;
         System.out.println("Die Zufallszahl lautet: " + zz);
-        for(int i = 50; i >= 3; i--){
-             if(i%zz == 0){
-                 System.out.printf(i +" ");
-             }
-
+        for (int i = 50; i >= 3; i--) {
+            if (i % zz == 0) {
+                System.out.printf(i + " ");
+            }
         }
     }
 }
