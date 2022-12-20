@@ -1,4 +1,4 @@
-package bz.berufsschule.verzweigungen_INF2A;
+package bz.berufsschule.verzweigungen;
 //TODO
 // wenn preis < 100€  --> kein Rabatt..4,99€ versand
 // wenn preis zwischen 100 und 600 -> 3,7% Rabatt ;4,99 versand

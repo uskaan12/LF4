@@ -1,4 +1,4 @@
-package bz.berufsschule.verzweigungen_INF2A;
+package bz.berufsschule.verzweigungen;
 
 import java.util.Random;
 
