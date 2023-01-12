@@ -1,0 +1,6 @@
+[submodule "src/main/java/bz/berufsschule/teams/LF4_teams_data"]
+	path = src/main/java/bz/berufsschule/teams/LF4_teams_data
+	url = https://github.com/Johoski/LF4_teams_data.git
+[submodule "src/main/java/bz/berufsschule/LF4_teams_data"]
+	path = src/main/java/bz/berufsschule/LF4_teams_data
+	url = https://github.com/Johoski/LF4_teams_data.git
