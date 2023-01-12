@@ -14,8 +14,8 @@ import javax.swing.*;
 public class aufgabe_5_2 {
     public static void main(String[] args) {
         String text = JOptionPane.showInputDialog("Geben Sie ein Wort ein: ");
-        String buchstabe_eingabe = JOptionPane.showInputDialog("Geben Sie einen Buchstaben ein: ");
-        char buchstabe = buchstabe_eingabe.charAt(0);
+        String search = JOptionPane.showInputDialog("Geben Sie einen Buchstaben ein: ");
+        char buchstabe = search.charAt(0);
         int anzahl = 0;
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) == buchstabe) {
