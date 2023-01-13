@@ -9,6 +9,7 @@ Diese Variablen sollen am Bildschirm ausgegeben werden.
  */
 public class aufgabe_5_3 {
     public static void main(String[] args) {
+        // Variablen
         String text = JOptionPane.showInputDialog("Geben Sie eine Zeichenkette ein: ");
         String textKlein = text.toLowerCase();
         String textGross = text.toUpperCase();
