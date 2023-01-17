@@ -9,13 +9,11 @@ eine Fehlermeldung erscheinen.
  */
 public class aufgabe_5_4 {
     public static void main(String[] args) {
-        // Eingabe
-        String text = JOptionPane.showInputDialog("Geben Sie eine Zeichenkette ein: ");
-        // Verarbeitung
-        if (text.length() < 6) {
+        String text_eingabe = JOptionPane.showInputDialog("Geben Sie eine Zeichenkette ein: ");
+        if (text_eingabe.length() < 6) {
             System.out.println("Fehler: Zeichenkette zu kurz");
         } else {
-            String textKlein = text.substring(2, 6);
+            String textKlein = text_eingabe.substring(2, 6);
             System.out.println("Ausgeschnittener Text: " + textKlein);
         }
     }
