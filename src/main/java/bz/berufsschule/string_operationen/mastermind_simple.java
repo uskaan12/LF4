@@ -28,8 +28,34 @@ public class mastermind_simple {
         int remaining = 10;
         while (remaining > 0) {
             //User input for the code
-            String input = JOptionPane.showInputDialog("Geben sie den Code ein.     Verbliebene Versuche " + remaining);
+            String input = JOptionPane.showInputDialog("Geben sie den Code ein.     Verbliebene Versuche " + (remaining - 1));
             remaining--;
+            char[] array = input.toCharArray();
+            boolean correct = true;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] != color_code[i]) {
+                    correct = false;
+                }
+            }
+            if (correct) {
+                System.out.println("Gratuliere Sie haben den Code geknackt!");
+                break;
+            } else {
+                String feedback = "";
+                for (int i = 0; i < color_code.length; i++) {
+                    if (color_code[i] == Character.getNumericValue(array[i])) {
+                        feedback = feedback + "g,";
+                    } else {
+                        boolean exists = false;
+                        for (int j = 0; i < color_code.length; j++) {
+                            if(color_code[i] == Character.getNumericValue(array[j])) {
+                                exists = true;
+                            }
+                        }
+                    }
+                }
+            }
+
             //check code - if player gets a number wrong output is b(black),
             //if player gets the number in the wrong place output is w(white),
             //if number is in the right place output is g(green)
