@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class aufgabe2 {
     public static void main(String[] args) {
-        //user inputs how many produkts he has
+        //user inputs how many products he has
         String input = JOptionPane.showInputDialog("Geben sie wie viele Werte eingelesen werden müssen");
         int number_of_products = Integer.parseInt(input);
         //make new array

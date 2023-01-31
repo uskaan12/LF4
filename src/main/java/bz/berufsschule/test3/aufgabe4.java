@@ -27,7 +27,7 @@ public class aufgabe4 {
             value_b = Integer.parseInt(input2);
             array_b[i] = value_b;
         }
-        //combine arrays in c
+        //combine arrays a and b in c and sort them
         int a = 0;
         int b = 0;
         int zaehlera = 0;
@@ -46,12 +46,11 @@ public class aufgabe4 {
             } else if (a < b) {
                 array_c[i] = a;
                 zaehlera++;
-            } else if (a > b) {
+            } else {
                 array_c[i] = b;
                 zaehlerb++;
             }
             System.out.println(array_c[i]);
         }
-
     }
 }
