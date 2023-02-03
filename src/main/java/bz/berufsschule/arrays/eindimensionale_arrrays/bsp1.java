@@ -1,4 +1,4 @@
-package bz.berufsschule.arrays;
+package bz.berufsschule.arrays.eindimensionale_arrrays;
 
 /*
  Erstelle ein Integer-Array der Länge 5 und fülle es mit den Zahlen 1 bis 5. Gib das Array aus.

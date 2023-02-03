@@ -1,4 +1,4 @@
-package bz.berufsschule.arrays;
+package bz.berufsschule.arrays.eindimensionale_arrrays;
 
 /*
 Erstelle ein Integer-Array mit den folgenden Zahlen darin:  55,2,99,3,7,11,22,66 Anschließend gib alles Zahlen aus die durch 11 teilbar sind. Die Ausgabe soll folgendermaßen ausschauen: 55-99-11-22-66 Achte darauf, dass bei der letzten Zahl kein Bindestrich mehr ausgegeben wird.

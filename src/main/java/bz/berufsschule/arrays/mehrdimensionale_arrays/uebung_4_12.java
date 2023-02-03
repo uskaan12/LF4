@@ -1,4 +1,4 @@
-package bz.berufsschule.arrays;
+package bz.berufsschule.arrays.mehrdimensionale_arrays;
 
 import javax.swing.*;
 

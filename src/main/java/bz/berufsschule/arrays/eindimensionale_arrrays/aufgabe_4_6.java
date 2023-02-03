@@ -1,4 +1,4 @@
-package bz.berufsschule.arrays;
+package bz.berufsschule.arrays.eindimensionale_arrrays;
 import java.util.Random;
 
 public class aufgabe_4_6 {

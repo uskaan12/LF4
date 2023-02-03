@@ -1,4 +1,4 @@
-package bz.berufsschule.arrays;
+package bz.berufsschule.arrays.eindimensionale_arrrays;
 
 /*
     Erstelle 7 Zufallszahlen zwischen 1 und 90 und speichere sie in einem Integer-Array.

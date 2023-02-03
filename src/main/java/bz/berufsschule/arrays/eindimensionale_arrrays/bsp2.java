@@ -1,4 +1,4 @@
-package bz.berufsschule.arrays;
+package bz.berufsschule.arrays.eindimensionale_arrrays;
 
 /*
 Erstelle ein Integer-Array der Länge 10 und fülle es mit Zufallszahlen zwischen 1 und 100.
