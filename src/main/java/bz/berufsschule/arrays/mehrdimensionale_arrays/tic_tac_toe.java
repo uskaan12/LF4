@@ -1,90 +1,96 @@
 package bz.berufsschule.arrays.mehrdimensionale_arrays;
 
+import javax.print.attribute.standard.MediaSize;
 import javax.swing.*;
 
-// Tic Tac Toe mit 2D-Array das ein 3x3 Feld darstellt uns 2 Spieler (X und O) die abwechselnd ihre Symbole eintragen können
 public class tic_tac_toe {
     public static void main(String[] args) {
+        char[][] board = {{'-', '-', '-'}, {'-', '-', '-'}, {'-', '-', '-'}};
+        boolean player1 = true;
+        boolean player2 = false;
+        boolean p1won = false;
+        boolean p2won = false;
 
-        // erzeuge spielfeld als 3x3 char-Array
-        char[][] spielfeld = new char[3][3];
 
-        // While Schleife die, solange läuft bis ein Spieler gewonnen hat
-        boolean gewonnen = false;
-        while (!gewonnen) {
-            // Spieler 1 ist dran
-            // Eingabe abfragen
-            String eingabe = JOptionPane.showInputDialog("Spieler 1: Bitte gib eine Zahl zwischen 1 und 9 ein");
-            int eingabe_Spieler1 = Integer.parseInt(eingabe);
-            // Eingabe in das Spielfeld eintragen
-            if (eingabe_Spieler1 == 1) {
-                spielfeld[0][0] = 'X';
-            } else if (eingabe_Spieler1 == 2) {
-                spielfeld[0][1] = 'X';
-            } else if (eingabe_Spieler1 == 3) {
-                spielfeld[0][2] = 'X';
-            } else if (eingabe_Spieler1 == 4) {
-                spielfeld[1][0] = 'X';
-            } else if (eingabe_Spieler1 == 5) {
-                spielfeld[1][1] = 'X';
-            } else if (eingabe_Spieler1 == 6) {
-                spielfeld[1][2] = 'X';
-            } else if (eingabe_Spieler1 == 7) {
-                spielfeld[2][0] = 'X';
-            } else if (eingabe_Spieler1 == 8) {
-                spielfeld[2][1] = 'X';
-            } else if (eingabe_Spieler1 == 9) {
-                spielfeld[2][2] = 'X';
-            }
-
-            // Spielfeld ausgeben
-            for (int i = 0; i < spielfeld.length; i++) {
-                for (int j = 0; j < spielfeld[i].length; j++) {
-                    System.out.print(spielfeld[i][j] + " ");
+        while (!p1won || !p2won) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    System.out.print(board[i][j] + " ");
                 }
                 System.out.println();
             }
-            // prüfen ob jemand gewonnen hat
-            // Spieler 2 ist dran
-            // Eingabe abfragen
-            String eingabe2 = JOptionPane.showInputDialog("Spieler 2: Bitte gib eine Zahl zwischen 1 und 9 ein");
-            int eingabe_Spieler2 = Integer.parseInt(eingabe2);
-            // Eingabe in das Spielfeld eintragen
-            if (eingabe_Spieler2 == 1) {
-                spielfeld[0][0] = 'O';
-            } else if (eingabe_Spieler2 == 2) {
-                spielfeld[0][1] = 'O';
-            } else if (eingabe_Spieler2 == 3) {
-                spielfeld[0][2] = 'O';
-            } else if (eingabe_Spieler2 == 4) {
-                spielfeld[1][0] = 'O';
-            } else if (eingabe_Spieler2 == 5) {
-                spielfeld[1][1] = 'O';
-            } else if (eingabe_Spieler2 == 6) {
-                spielfeld[1][2] = 'O';
-            } else if (eingabe_Spieler2 == 7) {
-                spielfeld[2][0] = 'O';
-            } else if (eingabe_Spieler2 == 8) {
-                spielfeld[2][1] = 'O';
-            } else if (eingabe_Spieler2 == 9) {
-                spielfeld[2][2] = 'O';
-            }
-            // Spielfeld ausgeben
-            for (int i = 0; i < spielfeld.length; i++) {
-                for (int j = 0; j < spielfeld[i].length; j++) {
-                    System.out.print(spielfeld[i][j] + " ");
+            if (player1) {
+                System.out.println("Player 1's turn");
+                int x = Integer.parseInt(JOptionPane.showInputDialog("Enter the x coordinate"));
+                int y = Integer.parseInt(JOptionPane.showInputDialog("Enter the y coordinate"));
+                if (board[x][y] == 'X' || board[x][y] == 'O') {
+                    System.out.println("You can't place your piece there!");
+                    continue;
+                } else if (board[x][y] == '-') {
+                    board[x][y] = 'X';
+                    player1 = false;
+                    player2 = true;
                 }
-                System.out.println();
+            } else if (player2) {
+                System.out.println("Player 2's turn");
+
+                int x = Integer.parseInt(JOptionPane.showInputDialog("Enter the x coordinate"));
+                int y = Integer.parseInt(JOptionPane.showInputDialog("Enter the y coordinate"));
+
+                if (board[x][y] == 'X' || board[x][y] == 'O') {
+                    System.out.println("You can't place your piece there!");
+                    continue;
+                } else if (board[x][y] == '-') {
+                    board[x][y] = 'O';
+                    player1 = true;
+                    player2 = false;
+                }
+            }
+
+            for (int i = 0; i < 3; i++) {
+                if (board[i][0] == 'X' && board[i][1] == 'X' && board[i][2] == 'X') {
+                    p1won = true;
+                    break;
+                }
+            }
+            for (int i = 0; i < 3; i++) {
+                if (board[0][i] == 'X' && board[1][i] == 'X' && board[2][i] == 'X') {
+                    p1won = true;
+                    break;
+                }
+            }
+            if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') {
+                p1won = true;
+            } else if (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X') {
+                p1won = true;
+            }
+
+            for (int i = 0; i < 3; i++) {
+                if (board[i][0] == 'O' && board[i][1] == 'O' && board[i][2] == 'O') {
+                    p2won = true;
+                    break;
+                }
+            }
+            for (int i = 0; i < 3; i++) {
+                if (board[0][i] == 'O' && board[1][i] == 'O' && board[2][i] == 'O') {
+                    p2won = true;
+                    break;
+                }
+            }
+            if (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O') {
+                p2won = true;
+            } else if (board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O') {
+                p2won = true;
+            }
+
+            if (p1won) {
+                System.out.println("Player 1 won!");
+                break;
+            } else if (p2won) {
+                System.out.println("Player 2 won!");
+                break;
             }
         }
-        // zwei Spieler die abwechselnd dran sind
 
-        // Eingabe abfragen
-
-        // X und O im Spieldfeld eintragen
-
-        // spielfeld ausgeben
-
-        // prüfen ob jemand gewonnen hat
     }
 }
