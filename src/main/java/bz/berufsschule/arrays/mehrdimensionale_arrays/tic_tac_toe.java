@@ -47,6 +47,7 @@ public class tic_tac_toe {
                 }
             }
 
+            // check if someone won
             for (int i = 0; i < 3; i++) {
                 if (board[i][0] == 'X' && board[i][1] == 'X' && board[i][2] == 'X') {
                     p1won = true;
