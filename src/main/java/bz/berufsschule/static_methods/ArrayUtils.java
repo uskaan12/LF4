@@ -45,9 +45,9 @@ public class ArrayUtils {
         return max;
     }
 
-    public static int average_number_In_Array(int array[]) {
+    public static double average_number_In_Array(int array[]) {
         int summe = sum_All_Values_In_Array(array);
-        int avg = summe / array.length;
+        double avg = summe / array.length;
         return avg;
     }
 }
