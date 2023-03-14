@@ -14,6 +14,6 @@ public class bsp1 {
         //Ausgabe des Arrays
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
-        }
+        } 
     }
 }
