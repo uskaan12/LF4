@@ -1,19 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package bz.berufsschule.utils;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author INF2A_Folie
- */
-public class FileWriter {
+public class FileUtils {
     
     public static void CreateFile(String filename) {
         
@@ -30,5 +22,17 @@ public class FileWriter {
         catch (IOException ex){
             
         } 
-    }  
+    }
+
+    public static void writeTextToFile(String filename, String text){
+        FileWriter myWriter = null;
+        try {
+            myWriter = new FileWriter(filename);
+            myWriter.write(text);
+            myWriter.close();
+        } catch (Exception e){
+            System.out.println("An error has occurred");
+            e.printStackTrace();
+        }
+    }
 }
