@@ -9,5 +9,7 @@ public class bspFileWriter {
         //FileUtils.writeTextToFile("test.txt", "Hello World!");
         int[] array = {2,3,5,7,43,6,8};
         ArrayUtils.writeArrayToFile("test.txt",array);
+        String text = FileUtils.textFromFile("login.txt");
+        System.out.println(text);
     }
 }
