@@ -21,13 +21,12 @@ public class login extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         String file = "credentials.txt";
+        String ausgabe = FileUtils.textFromFile(file);
         String username = textField1.getText();
         String temp_password = passwordField1.getText();
-        int zahl = FileUtils.passwdFromFile(file);
+        int zahl = Integer.parseInt(ausgabe.split(" ")[2]);
         String password = Kryptograph.verschluesseln(temp_password, zahl);
-        String merged = username + password;
-        String ausgabe = FileUtils.textFromCredentials(file);
-        if (Objects.equals(merged, ausgabe)){
+        if (Objects.equals(username, ausgabe.split(" ")[0]) && Objects.equals(password, ausgabe.split(" ")[1])){
             status.setText("Success");
             System.out.println("Success");
             System.exit(0);

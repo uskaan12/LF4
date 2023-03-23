@@ -42,7 +42,7 @@ public class FileUtils {
             File file = new File(filename);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNext()) {
-                ausgabe += scanner.next();
+                ausgabe += scanner.nextLine();
             }
             scanner.close();
         } catch (FileNotFoundException e) {
@@ -51,53 +51,5 @@ public class FileUtils {
         }
 
         return ausgabe;
-    }
-
-    public static String textFromCredentials(String filename) {
-        String ausgabe = "";
-        try {
-            int counter = 1;
-            File file = new File(filename);
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNext()) {
-                if (counter == 3) {
-                    counter++;
-                } else {
-                    ausgabe += scanner.next();
-                    counter++;
-                }
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error has occurred");
-            e.printStackTrace();
-        }
-
-        return ausgabe;
-    }
-
-    public static int passwdFromFile(String filename) {
-        int zahl = 0;
-        try {
-            String temp = "";
-            int counter = 1;
-
-            File file = new File(filename);
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNext()) {
-                if (counter == 3) {
-                    temp = scanner.next();
-                    zahl = Integer.parseInt(temp);
-                } else {
-                    temp = scanner.next();
-                    counter++;
-                }
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error has occurred");
-            e.printStackTrace();
-        }
-        return zahl;
     }
 }
