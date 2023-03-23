@@ -1,6 +1,7 @@
 package bz.berufsschule.static_methods.login_register;
 
 import bz.berufsschule.utils.FileUtils;
+import bz.berufsschule.utils.Kryptograph;
 
 import javax.swing.*;
 import javax.swing.JPanel;
@@ -19,11 +20,13 @@ public class login extends JFrame implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        String file = "credentials.txt";
         String username = textField1.getText();
-        String password = passwordField1.getText();
+        String temp_password = passwordField1.getText();
+        int zahl = FileUtils.passwdFromFile(file);
+        String password = Kryptograph.verschluesseln(temp_password, zahl);
         String merged = username + password;
-        String file = "login.txt";
-        String ausgabe = FileUtils.textFromFile(file);
+        String ausgabe = FileUtils.textFromCredentials(file);
         if (Objects.equals(merged, ausgabe)){
             status.setText("Success");
             System.out.println("Success");

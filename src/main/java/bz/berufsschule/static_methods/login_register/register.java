@@ -1,11 +1,13 @@
 package bz.berufsschule.static_methods.login_register;
 
 import bz.berufsschule.utils.FileUtils;
+import bz.berufsschule.utils.Kryptograph;
 
 import javax.swing.*;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class register extends JFrame implements ActionListener {
     private JPanel panel1;
@@ -20,12 +22,15 @@ public class register extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String file = "login.txt";
+        String file = "credentials.txt";
         FileUtils.CreateFile(file);
         String username = textField1.getText();
-        String password = passwordField1.getText();
-        String merged = username + " " + password;
-        FileUtils.writeTextToFile("login.txt", merged);
+        String temp_password = passwordField1.getText();
+        Random random = new Random();
+        int zahl = random.nextInt(99) + 1;
+        String password = Kryptograph.verschluesseln(temp_password, zahl);
+        String merged = username + " " + password + " " + zahl;
+        FileUtils.writeTextToFile(file, merged);
         System.exit(0);
     }
 
