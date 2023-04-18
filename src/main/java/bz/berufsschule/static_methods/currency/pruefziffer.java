@@ -1,24 +1,23 @@
 package bz.berufsschule.static_methods.currency;
 
-import bz.berufsschule.utils.FileUtils;
-import bz.berufsschule.utils.Kryptograph;
 import bz.berufsschule.utils.euroUtils;
 
 import javax.swing.*;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
-public class pruefziffer extends JFrame implements ActionListener{
+
+public class pruefziffer extends JFrame implements ActionListener {
     private JTextField Seriennummer;
     private JButton berechneButton;
     private JLabel Resultat;
     private JPanel panel;
 
-    public pruefziffer(){
+    public pruefziffer() {
         berechneButton.addActionListener(this);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String strSeriennummer = Seriennummer.getText();
@@ -27,6 +26,7 @@ public class pruefziffer extends JFrame implements ActionListener{
         Resultat.setText(strErg);
         System.out.println(erg);
     }
+
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); //Windows Look and feel

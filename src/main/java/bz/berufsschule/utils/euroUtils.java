@@ -11,7 +11,7 @@ public class euroUtils {
             temp = temp + Character.getNumericValue(char_array[i]);
         }
         int temp2 = temp % 9;
-        int erg_temp = 8-temp2;
+        int erg_temp = 8 - temp2;
 
         int erg;
         if (erg_temp == 0) {
